@@ -1,18 +1,15 @@
-## Getting Started
+## Pika Pika ^^
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+Welcome to the Pokemon world.
 
 ## Folder Structure
 
-The workspace contains two folders by default, where:
+- `.vscode/settings.json` : configuration file specific to VSCode for our Java project
+- `src`: the folder of our source code (default)
+- `bin`: the compiled output files (default)
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
-
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
-
-## Dependency Management
-
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+## Progress log
+| Date   | Description                                                                        |
+|--------|------------------------------------------------------------------------------------|
+| Week 6 | - create basic classes require for our project and establish connection with MySQL |

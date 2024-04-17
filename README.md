@@ -7,9 +7,10 @@ Welcome to the Pokemon world.
 - `src`: the folder of our source code (default)
 - `lib`: the folder to maintain dependencies (default)
 - `bin`: the compiled output files (default)
+- `.vscode/settings.json` : configuration file specific to VSCode for our Java project
 
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
+## Progress log
+| Date   | Description                                                                      |
+|--------|----------------------------------------------------------------------------------|
+| Week 6 | - create basic classes require for our project - establish connection with MySQL |
 
-## Dependency Management
-
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).

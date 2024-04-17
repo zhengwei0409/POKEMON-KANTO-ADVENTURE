@@ -4,10 +4,10 @@ Welcome to the Pokemon world.
 
 ## Folder Structure
 
-- `src`: the folder of our source code (default)
-- `lib`: the folder to maintain dependencies (default)
-- `bin`: the compiled output files (default)
 - `.vscode/settings.json` : configuration file specific to VSCode for our Java project
+- `src`: the folder of our source code (default)
+- `bin`: the compiled output files (default)
+
 
 ## Progress log
 | Date   | Description                                                                        |

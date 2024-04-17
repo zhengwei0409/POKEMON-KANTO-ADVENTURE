@@ -12,4 +12,4 @@ Welcome to the Pokemon world.
 ## Progress log
 | Date   | Description                                                                        |
 |--------|------------------------------------------------------------------------------------|
-| Week 6 | - create basic classes require for our project   - establish connection with MySQL |
+| Week 6 | - create basic classes require for our project and establish connection with MySQL |

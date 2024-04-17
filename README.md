@@ -10,7 +10,6 @@ Welcome to the Pokemon world.
 - `.vscode/settings.json` : configuration file specific to VSCode for our Java project
 
 ## Progress log
-| Date   | Description                                                                      |
-|--------|----------------------------------------------------------------------------------|
-| Week 6 | - create basic classes require for our project - establish connection with MySQL |
-
+| Date   | Description                                                                       |
+|--------|-----------------------------------------------------------------------------------|
+| Week 6 | - create basic classes require for our project  - establish connection with MySQL |

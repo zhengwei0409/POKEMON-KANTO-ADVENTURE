@@ -1,4 +1,7 @@
 import java.sql.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+
 
 public class Database {
 
@@ -31,10 +34,22 @@ public class Database {
                 String pokemons = resultSet.getString("pokemons");
                 String badges = resultSet.getString("badges");
 
-                System.out.println("Player Name: " + playerName);
-                System.out.println("Last Location: " + lastLocation);
-                System.out.println("Pokemons: " + pokemons);
-                System.out.println("Badges: " + badges);
+                // temporary variable for handling null value
+                String[] pokemonsArray;
+                if(pokemons == null) {
+                    pokemonsArray = null;
+                } else {
+                    pokemonsArray = pokemons.split(",");
+                }
+
+                ArrayList<String> badgesArrayList;
+                if(badges == null) {
+                    badgesArrayList = new ArrayList<>();
+                } else {
+                    badgesArrayList = new ArrayList<>(Arrays.asList(badges.split(",")));
+                }
+
+                account = new Account(playerName, lastLocation, pokemonsArray, badgesArrayList);
 
             } else {
                 System.out.println("User not found!");

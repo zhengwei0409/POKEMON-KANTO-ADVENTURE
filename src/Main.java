@@ -15,5 +15,7 @@ public class Main {
 
         Database save1 = new Database(1);
 
+        System.out.println(save1.account.getLastLocation());
+
     }   
 }

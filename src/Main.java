@@ -17,5 +17,8 @@ public class Main {
 
         System.out.println(save1.account.getLastLocation());
 
+    // method for determine whether override or start a new game
+    public static String determineGame(String name) {
+        return (name.equals("empty")) ? "new" : "Override";  //  ternary operator
     }   
 }

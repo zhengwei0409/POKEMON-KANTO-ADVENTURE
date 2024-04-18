@@ -6,7 +6,7 @@ import Pokemons.Bulbasaur;
 import Pokemons.Pokemon;
 
 public class Account {
-    private String name;
+    private String name = "empty";
     private City lastLocation;
     private ArrayList<Pokemon> pokemonTeam = new ArrayList<>();
     private ArrayList<String> badges = new ArrayList<>();
@@ -17,8 +17,13 @@ public class Account {
     City[] fullListOfCities = {new PalletTown()};
 
     // constructor
+    public Account() {
+        this.lastLocation = new PalletTown();
+    }
+
+
     public Account(String name, String lastLocation, String[] pokemonTeam, ArrayList<String> badges) {
-        this.name = name;
+        handlingName(name);
         convertCityType(lastLocation);
         convertPokemonType(pokemonTeam);
         this.badges = badges;
@@ -57,6 +62,15 @@ public class Account {
             if(city.equals(i.toString())) {
                 lastLocation = i;
             }
+        }
+    }
+
+    // method 4 : handle null value of name
+    public void handlingName(String name) {
+        if(name == null) {
+            return;
+        } else {
+            setName(name);
         }
     }
 

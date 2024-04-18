@@ -7,13 +7,13 @@ public class Database {
 
     Account account;
 
+    // database information
+    String jdbcUrl = "jdbc:mysql://localhost:3306/PokemonDB";
+    String username = "root";
+    String password = "database";
+
     // This constructor will fetch the details of a particular account
     public Database(int index) {
-
-        // database information
-        String jdbcUrl = "jdbc:mysql://localhost:3306/PokemonDB";
-        String username = "root";
-        String password = "database";
 
         try {
             // Establish database connection
@@ -35,17 +35,13 @@ public class Database {
                 String badges = resultSet.getString("badges");
 
                 // temporary variable for handling null value
-                String[] pokemonsArray;
-                if(pokemons == null) {
-                    pokemonsArray = null;
-                } else {
+                String[] pokemonsArray = null;
+                if(pokemons != null) {
                     pokemonsArray = pokemons.split(",");
                 }
 
-                ArrayList<String> badgesArrayList;
-                if(badges == null) {
-                    badgesArrayList = new ArrayList<>();
-                } else {
+                ArrayList<String> badgesArrayList = new ArrayList<>();
+                if(badges != null) {
                     badgesArrayList = new ArrayList<>(Arrays.asList(badges.split(",")));
                 }
 
@@ -63,5 +59,8 @@ public class Database {
             e.printStackTrace();
         }
     }
+
+    // Method 1 : for updating and saving new value (account) to database
+    
 
 }

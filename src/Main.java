@@ -55,6 +55,7 @@ public class Main {
                 System.exit(0); // terminate the program
             default:
                 System.out.println("Invalid Command");
+                System.exit(0);
                 break;
         }
 

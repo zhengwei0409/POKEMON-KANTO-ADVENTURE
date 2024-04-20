@@ -29,6 +29,7 @@ public class Main {
         System.out.println("+----------------------------------------------------------------------+");
         System.out.print("Your choice: ");
         String userInput = sc.nextLine();
+        System.out.println("+----------------------------------------------------------------------+");
 
         switch (userInput) {
             case "1a":
@@ -51,6 +52,7 @@ public class Main {
                 break;
             case "2c":
                 indexOfAccount = 3;
+                break;
             case "3":
                 System.exit(0); // terminate the program
             default:
@@ -59,9 +61,21 @@ public class Main {
                 break;
         }
 
-        // debug purpose
-        System.out.println("Account name: "+userAccount.getName());
-        System.out.println("Index: " + indexOfAccount);
+        // if user account name field is empty, it means that it is a new game
+        if(userAccount.getName().equals("empty")) {
+            Dialog.OakWelcomeDialog();
+            System.out.println("+----------------------------------------------------------------------+");
+            System.out.print("Enter your name: ");
+            String name = sc.nextLine();
+            userAccount.setName(name);
+            System.out.println("+----------------------------------------------------------------------+");
+            Dialog.OakChoosePokemonDialog(name);
+            System.out.println("+----------------------------------------------------------------------+");
+            
+        }
+
+        System.out.println("User name: " + userAccount.getName());
+        
         
         sc.close();
 
@@ -71,5 +85,5 @@ public class Main {
     // method for determine whether override or start a new game
     public static String determineGame(String name) {
         return (name.equals("empty")) ? "new" : "Override";  //  ternary operator
-    }
+    } 
 }

@@ -15,5 +15,6 @@ public class Dialog {
     public static void OakChoosePokemonDialog(String name) {
         System.out.printf("OAK:    Right! So your name is %s! Welcome to the world of Pokemon.\n" + 
         "It's time to choose your starting pokemon.", name);
+        System.out.println();
     }
 }

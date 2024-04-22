@@ -72,6 +72,12 @@ public class Main {
             Dialog.OakChoosePokemonDialog(name);
             System.out.println("+----------------------------------------------------------------------+");
             
+            System.out.println("[1] Bulbasaur [Grass - Level 5]");
+            System.out.println("[2] Squirtle [Water - Level 5]");
+            System.out.println("[3] Charmander [Fire - Level 5]");
+            System.out.println("+----------------------------------------------------------------------+");
+            System.out.print("Your choice: ");
+
         }
 
         System.out.println("User name: " + userAccount.getName());

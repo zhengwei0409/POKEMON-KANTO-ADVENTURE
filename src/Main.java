@@ -7,15 +7,18 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         // Use for storing user account
         Account userAccount = new Account();
-        // Storing the index of account user had chosen
+        // Storing the index of account user had chosen (so that later we know which row we need to save the account)
         int indexOfAccount = 0;
-        // Game menu
+
+        // ==================================
+        // Start Game
+        // ==================================
         AsciiArt.displayLogo();
         System.out.println("+----------------------------------------------------------------------+");
         System.out.println("Welcome to Pokemon - Kanto Adventures");
         System.out.println("+----------------------------------------------------------------------+");
         System.out.println("[1] Load Game:");
-        // get account name
+        // get account name for each row (save1, save2 and save3)
         Database save1 = new Database(1);
         String name1 = save1.account.getName();
         Database save2 = new Database(2);
@@ -24,13 +27,14 @@ public class Main {
         String name3 = save3.account.getName();
         System.out.printf("    a. Save 1 - %-10s   b. Save 2 - %-10s  c. Save 3 - %-10s\n", name1, name2, name3);
         System.out.println("[2] Start a new Adventure:");
-        System.out.printf("    a. Save 1 - %-10s   b. Save 2 - %-10s  c. Save 3 - %-10s\n", determineGame(name1), determineGame(name2), determineGame(name3));
+        System.out.printf("    a. Save 1 - %-10s   b. Save 2 - %-10s  c. Save 3 - %-10s\n", decideGame(name1), decideGame(name2), decideGame(name3));
         System.out.println("[3] Exit");
         System.out.println("+----------------------------------------------------------------------+");
         System.out.print("Your choice: ");
         String userInput = sc.nextLine();
         System.out.println("+----------------------------------------------------------------------+");
 
+        // use switch to execute the input (command) by user
         switch (userInput) {
             case "1a":
                 userAccount = save1.account;
@@ -71,7 +75,6 @@ public class Main {
             System.out.println("+----------------------------------------------------------------------+");
             Dialog.OakChoosePokemonDialog(name);
             System.out.println("+----------------------------------------------------------------------+");
-            
             System.out.println("[1] Bulbasaur [Grass - Level 5]");
             System.out.println("[2] Squirtle [Water - Level 5]");
             System.out.println("[3] Charmander [Fire - Level 5]");
@@ -80,7 +83,7 @@ public class Main {
 
         }
 
-        System.out.println("User name: " + userAccount.getName());
+        System.out.println("\nUser name: " + userAccount.getName());
         
         
         sc.close();
@@ -88,8 +91,8 @@ public class Main {
 
     }   
 
-    // method for determine whether override or start a new game
-    public static String determineGame(String name) {
+    // Method 1 : use for decide whether override or start a new game
+    public static String decideGame(String name) {
         return (name.equals("empty")) ? "new" : "Override";  //  ternary operator
     } 
 }

@@ -2,7 +2,6 @@ import java.util.ArrayList;
 
 import Cities.City;
 import Cities.PalletTown;
-import Pokemons.Bulbasaur;
 import Pokemons.Pokemon;
 
 public class Account {
@@ -11,8 +10,6 @@ public class Account {
     private ArrayList<Pokemon> pokemonTeam = new ArrayList<>();
     private ArrayList<String> badges = new ArrayList<>();
 
-    // full list of pokemon use in this game
-    Pokemon[] fullListOfPokemon = {new Bulbasaur()};
     // full list of city use in this game
     City[] fullListOfCities = {new PalletTown()};
 
@@ -22,10 +19,10 @@ public class Account {
     }
 
 
-    public Account(String name, String lastLocation, String[] pokemonTeam, ArrayList<String> badges) {
+    public Account(String name, String lastLocation, ArrayList<Pokemon> pokemonTeam, ArrayList<String> badges) {
         handlingName(name);
         convertCityType(lastLocation);
-        convertPokemonType(pokemonTeam);
+        this.pokemonTeam = pokemonTeam;
         this.badges = badges;
     }
 
@@ -35,22 +32,7 @@ public class Account {
         pokemonTeam.add(newPokemon);
     }
 
-    // method 2 : convert String type of pokemon array into the Pokemon type array ^^
-    public void convertPokemonType(String[] pokemonTeam) {
-        // handle null senario
-        if(pokemonTeam == null) {
-            return;
-        }
-        for(Pokemon i : fullListOfPokemon) {
-            for(String j : pokemonTeam) {
-                if(j.equals(i.toString())) {
-                    this.pokemonTeam.add(i);
-                }
-            }
-        }
-    }
-
-    // method 3 : convert String type city into City type 
+    // method 2 : convert String type city into City type 
     public void convertCityType(String city) {
         // if the city is null, it means it is a new game, so set the lastLocation to PalletTown
         if(city == null) {
@@ -65,7 +47,7 @@ public class Account {
         }
     }
 
-    // method 4 : handle null value of name
+    // method 3 : handle null value of name
     public void handlingName(String name) {
         if(name == null) {
             return;

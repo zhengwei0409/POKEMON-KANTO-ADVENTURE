@@ -11,7 +11,9 @@ public class Pokemon {
     protected String[] strength;
     protected String[] weakness;
 
-    
+    public Pokemon() {
+        // default constructor
+    }
 
     public Pokemon(String name, int level, int maxHp, int hp, int xp) {
         this.name = name;
@@ -22,9 +24,6 @@ public class Pokemon {
     }
 
 
-
-    @Override
-    public String toString() {
     // setter and getter 
     public String getName() {
         return name;

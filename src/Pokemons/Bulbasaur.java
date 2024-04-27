@@ -4,10 +4,10 @@ public class Bulbasaur extends Pokemon {
 
 
     public Bulbasaur() {
-        super("Bulbasaur", 5, 45, 45, 100);
-        this.type = new String[]{"Grass", "Poison"};
+        super("Squirtle", 5, 45, 49, 100);
+        this.type = "Grass";
         this.strength = new String[]{"Water", "Ground", "Rock"};
-        this.weakness = new String[]{"Fire", "Ice", "Flying", "Psychic"};
+        this.weakness = new String[]{"Fire", "Grass", "Poison"};
     }
 
 }

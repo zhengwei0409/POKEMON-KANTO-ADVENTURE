@@ -4,10 +4,10 @@ package Pokemons;
  */
 public class Pokemon {
     protected String name;
-    protected String[] type;
+    protected String type;
     protected int level;
-    protected int maxHp, hp;
-    protected int xp;
+    protected int maxHp, hp, attack;
+    protected int currentXp = 0, xp;
     protected String[] strength;
     protected String[] weakness;
 
@@ -15,11 +15,12 @@ public class Pokemon {
         // default constructor
     }
 
-    public Pokemon(String name, int level, int maxHp, int hp, int xp) {
+    public Pokemon(String name, int level, int maxHp, int attack, int xp) {
         this.name = name;
         this.level = level;
         this.maxHp = maxHp;
-        this.hp = hp;
+        this.hp = maxHp;
+        this.attack = attack;
         this.xp = xp;
     }
 
@@ -37,13 +38,13 @@ public class Pokemon {
 
 
 
-    public String[] getType() {
+    public String getType() {
         return type;
     }
 
 
 
-    public void setType(String[] type) {
+    public void setType(String type) {
         this.type = type;
     }
 
@@ -71,7 +72,13 @@ public class Pokemon {
         this.maxHp = maxHp;
     }
 
+    public int getCurrentXp() {
+        return currentXp;
+    }
 
+    public void setCurrentXp(int xp) {
+        this.currentXp = xp;
+    }
 
     public int getHp() {
         return hp;

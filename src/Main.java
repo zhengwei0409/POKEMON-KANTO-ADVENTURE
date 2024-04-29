@@ -6,7 +6,6 @@ import Pokemons.*;
 public class Main {
     public static void main(String[] args) {
         
-        
         loadGame();
 
     }   
@@ -119,7 +118,7 @@ public class Main {
                 // ==================================
                 System.out.printf("You are currently in %s:\n", userAccount.getLastLocation());
                 
-                printMenu(userAccount);
+                printMenu(userAccount, indexOfAccount);
                 
                 
                 
@@ -132,7 +131,7 @@ public class Main {
     } 
 
     // method 3 : use for printing the CLI for game menu
-    public static void printMenu(Account myAccount) {
+    public static void printMenu(Account myAccount, int indexOfAccount) {
         System.out.println("+----------------------------------------------------------------------+");
         City currentLocation = myAccount.getLastLocation();
         System.out.println("[1] Move to: ");
@@ -158,39 +157,39 @@ public class Main {
         String userInput = sc.nextLine();
         System.out.println("+----------------------------------------------------------------------+");
 
-        exucuteInput(myAccount, userInput);
+        exucuteInput(myAccount, userInput, indexOfAccount);
 
         sc.close();
     }
 
     // method 4 : use for execute command input by user
-    public static void exucuteInput(Account myAccount, String userInput) {
+    public static void exucuteInput(Account myAccount, String userInput, int indexOfAccount) {
         City currentLocation = myAccount.getLastLocation();
         switch (userInput) {
             case "1a":
                 myAccount.setLastLocation(currentLocation.getReachableCity().get(0));
-                printMenu(myAccount);
+                printMenu(myAccount, indexOfAccount);
                 break;
             case "1b":
                 myAccount.setLastLocation(currentLocation.getReachableCity().get(1));
-                printMenu(myAccount);
+                printMenu(myAccount, indexOfAccount);
                 break;
             case "2":
                 if(currentLocation.equals("Pallet Town")) {
                     Dialog.MomTalking(myAccount.getName());
-                    printMenu(myAccount);
+                    printMenu(myAccount, indexOfAccount);
                 } else {
                     // fight with gym leader
-                    printMenu(myAccount);
+                    printMenu(myAccount, indexOfAccount);
                 }
                 break;
             case "3":
                 // create a method for battle with wild pokemon
-                printMenu(myAccount);
+                printMenu(myAccount, indexOfAccount);
                 break;
             case "4a":
                 // create a method for showing the map
-                printMenu(myAccount);
+                printMenu(myAccount, indexOfAccount);
                 break;
             case "4b":
                 Pokemon myPokemon = myAccount.getPokemonTeam().get(0);
@@ -209,17 +208,17 @@ public class Main {
                 for(String i : myPokemon.getWeakness()) {
                     System.out.println("- " + i);
                 }
-                printMenu(myAccount);
+                printMenu(myAccount, indexOfAccount);
                 break;
             case "4c":
                 System.out.println("Your Badges:");
                 for(String i : myAccount.getBadges()) {
                     System.out.println("- " + i);
                 }
-                printMenu(myAccount);
+                printMenu(myAccount, indexOfAccount);
                 break;
             case "4d":
-                // [save method here]
+                new Database(myAccount, indexOfAccount);
                 loadGame();
                 break;
 

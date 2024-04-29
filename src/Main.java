@@ -148,7 +148,7 @@ public class Main {
         System.out.println("[4] Player Options");
         System.out.println("    a.Show map    b.Show My Pokemon   c.Show My badges   d.Save and Exit");
 
-        // if the city has extra feature then print [5] Extra Feature 
+        // [TODO] if the city has extra feature then print [5] Extra Feature 
 
         // recursion
         Scanner sc = new Scanner(System.in);
@@ -179,16 +179,16 @@ public class Main {
                     Dialog.MomTalking(myAccount.getName());
                     printMenu(myAccount, indexOfAccount);
                 } else {
-                    // fight with gym leader
+                    // [TODO] fight with gym leader method
                     printMenu(myAccount, indexOfAccount);
                 }
                 break;
             case "3":
-                // create a method for battle with wild pokemon
+                // [TODO] create a method for battle with wild pokemon
                 printMenu(myAccount, indexOfAccount);
                 break;
             case "4a":
-                // create a method for showing the map
+                // [TODO] create a method for showing the map
                 printMenu(myAccount, indexOfAccount);
                 break;
             case "4b":
@@ -199,7 +199,7 @@ public class Main {
                 System.out.printf("HP: %s\n", myPokemon.getHp());
                 System.out.printf("XP: %s/%s\n", myPokemon.getCurrentXp(), myPokemon.getXp());
                 System.out.println("Moves:");
-                // [print the move]
+                // [TODO] print the move
                 System.out.println("Strong Against:");
                 for(String i : myPokemon.getStrength()) {
                     System.out.println("- " + i);

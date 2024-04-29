@@ -140,7 +140,7 @@ public class Main {
         if(currentLocation.equals("Pallet Town")) {
             System.out.println("[2] Talk to Mom [Your hometown has no Gym]");
         } else {
-            // fight with gym leader
+            // [TODO] fight with gym leader
         }
 
         System.out.printf("[3] Fight Wild Pokemon [%s, %s are common]\n", currentLocation.getWildPokemon().get(0), currentLocation.getWildPokemon().get(1));

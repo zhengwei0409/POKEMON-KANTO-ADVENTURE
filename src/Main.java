@@ -228,4 +228,31 @@ public class Main {
                 break;
         }
     }
+
+    // method 5 : show map function
+    public static void showMap(String currentLocation) {
+        System.out.println(getCityNameWithAsterisk("Pewter City", currentLocation) + "-------------------" + getCityNameWithAsterisk("Cerulean City", currentLocation) + "-----------------|");
+        System.out.println("      |                                |                      |");
+        System.out.println("      |                                |                      |");
+        System.out.println("      |                                |                      |");
+        System.out.println("      |                                |                      |");
+        System.out.println("      |        " + getCityNameWithAsterisk("Celadon City", currentLocation) + "----" + getCityNameWithAsterisk("Saffron City", currentLocation) + "---------" + getCityNameWithAsterisk("Lavender Town", currentLocation));
+        System.out.println("      |               |                |                      |");
+        System.out.println(getCityNameWithAsterisk("Viridian City", currentLocation) + "        |                |                      |");
+        System.out.println("      |               |                |                      |");
+        System.out.println("      |               |                |                      |");
+        System.out.println("      |               |       " + getCityNameWithAsterisk("Vermillion City", currentLocation) + "----------------|");
+        System.out.println("      |               |                                       |");
+        System.out.println(getCityNameWithAsterisk("Pallet Town", currentLocation) + "          |                                       |");
+        System.out.println("      |               |                                       |");
+        System.out.println("      |          " + getCityNameWithAsterisk("Fuchsia City", currentLocation) + "--------------------------------|");
+        System.out.println("      |               |");
+        System.out.println("      |               |");
+        System.out.println(getCityNameWithAsterisk("Cinnabar Island", currentLocation) + "------|");
+        System.out.println("+----------------------------------------------------------------------+");
+    }
+    
+    private static String getCityNameWithAsterisk(String cityName, String currentLocation) {
+        return cityName.equals(currentLocation) ? "[*" + cityName + "*]" : "[" + cityName + "]";
+    }
 }

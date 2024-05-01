@@ -1,7 +1,6 @@
 import java.util.ArrayList;
 
-import Cities.City;
-import Cities.PalletTown;
+import Cities.*;
 import Pokemons.Pokemon;
 
 public class Account {
@@ -11,7 +10,7 @@ public class Account {
     private ArrayList<String> badges = new ArrayList<>();
 
     // full list of city use in this game
-    City[] fullListOfCities = {new PalletTown()};
+    City[] fullListOfCities = {new PalletTown(), new ViridianCity(), new CinnabarIsland(), new PewterCity()};
 
     // constructor
     public Account() {

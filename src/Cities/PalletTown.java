@@ -12,6 +12,10 @@ public class PalletTown extends City {
 
     public PalletTown() {
         super("Pallet Town");
+    }
+
+    @Override
+    public void initialize() {
         reachableCity.add(new ViridianCity());
         reachableCity.add(new CinnabarIsland());
         wildPokemon.add(new Pidgey());

@@ -41,7 +41,7 @@ public class Main {
                 System.out.println("+----------------------------------------------------------------------+");
                 System.out.print("Your choice: ");
                 String userInput = sc.nextLine();
-                System.out.println("+----------------------------------------------------------------------+");
+                
         
                 // use switch to execute the input (command) by user
                 switch (userInput) {
@@ -76,6 +76,7 @@ public class Main {
         
                 // if user account name field is empty, it means that it is a new game
                 if(userAccount.getName().equals("empty")) {
+                    System.out.println("+----------------------------------------------------------------------+");
                     Dialog.OakWelcomeDialog();
                     System.out.println("+----------------------------------------------------------------------+");
                     System.out.print("Enter your name: ");
@@ -109,15 +110,13 @@ public class Main {
                     }
                     System.out.println("+----------------------------------------------------------------------+");
                     System.out.printf("OAK:    You chose %s, an amazing choice. Best of luck!\n", userAccount.getPokemonTeam().getFirst());
-                    System.out.println("+----------------------------------------------------------------------+");
+
                 }
         
         
                 // ==================================
                 // Start Game
                 // ==================================
-                System.out.printf("You are currently in %s:\n", userAccount.getLastLocation());
-                
                 printMenu(userAccount, indexOfAccount);
                 
                 
@@ -132,15 +131,19 @@ public class Main {
 
     // method 3 : use for printing the CLI for game menu
     public static void printMenu(Account myAccount, int indexOfAccount) {
-        System.out.println("+----------------------------------------------------------------------+");
         City currentLocation = myAccount.getLastLocation();
+        
+        System.out.println("+----------------------------------------------------------------------+");
+        System.out.printf("You are currently in %s:\n", currentLocation);
+        System.out.println("+----------------------------------------------------------------------+");
+        currentLocation.initialize();
         System.out.println("[1] Move to: ");
         System.out.printf("    a. %-17s    b. %-17s\n", currentLocation.getReachableCity().get(0), currentLocation.getReachableCity().get(1));
 
         if(currentLocation.equals("Pallet Town")) {
             System.out.println("[2] Talk to Mom [Your hometown has no Gym]");
         } else {
-            // [TODO] fight with gym leader
+            System.out.printf("[2] Challenge Gym leader [%s - %s type]\n", currentLocation.getGymLeader().getName(), currentLocation.getGymLeader().getType());
         }
 
         System.out.printf("[3] Fight Wild Pokemon [%s, %s are common]\n", currentLocation.getWildPokemon().get(0), currentLocation.getWildPokemon().get(1));
@@ -188,26 +191,12 @@ public class Main {
                 printMenu(myAccount, indexOfAccount);
                 break;
             case "4a":
-                // [TODO] create a method for showing the map
+                showMap(myAccount.getLastLocation().toString());
                 printMenu(myAccount, indexOfAccount);
                 break;
             case "4b":
                 Pokemon myPokemon = myAccount.getPokemonTeam().get(0);
-                System.out.println("Your Pokémon:");
-                System.out.printf("%s - Level: %s\n", myPokemon.getName(), myPokemon.getLevel());
-                System.out.printf("Type: %s\n", myPokemon.getType());
-                System.out.printf("HP: %s\n", myPokemon.getHp());
-                System.out.printf("XP: %s/%s\n", myPokemon.getCurrentXp(), myPokemon.getXp());
-                System.out.println("Moves:");
-                // [TODO] print the move
-                System.out.println("Strong Against:");
-                for(String i : myPokemon.getStrength()) {
-                    System.out.println("- " + i);
-                }
-                System.out.println("Weak Against:");
-                for(String i : myPokemon.getWeakness()) {
-                    System.out.println("- " + i);
-                }
+                myPokemon.printDetails();
                 printMenu(myAccount, indexOfAccount);
                 break;
             case "4c":

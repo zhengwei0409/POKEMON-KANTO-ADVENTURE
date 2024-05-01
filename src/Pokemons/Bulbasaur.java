@@ -8,6 +8,7 @@ public class Bulbasaur extends Pokemon {
         this.type = "Grass";
         this.strength = new String[]{"Water", "Ground", "Rock"};
         this.weakness = new String[]{"Fire", "Grass", "Poison"};
+        this.move = new Move("Growl", "Tackle", 49);
     }
 
 }

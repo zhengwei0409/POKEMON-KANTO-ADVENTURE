@@ -52,6 +52,6 @@ public class City {
 
 
     public boolean equals(String n) {
-        return this.name.equals(n);
+        return this.name.equalsIgnoreCase(n);
     }
 }

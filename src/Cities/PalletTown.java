@@ -1,7 +1,6 @@
 package Cities;
 
-import Pokemons.Meowth;
-import Pokemons.Pidgey;
+import Pokemons.*;
 
 /*
  * This is the town that every player's journey start
@@ -18,6 +17,7 @@ public class PalletTown extends City {
     public void initialize() {
         reachableCity.add(new ViridianCity());
         reachableCity.add(new CinnabarIsland());
+        wildPokemon.add(new Scyther());
         wildPokemon.add(new Pidgey());
         wildPokemon.add(new Meowth());
     }

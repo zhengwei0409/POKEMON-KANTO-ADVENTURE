@@ -1,5 +1,8 @@
 package Cities;
 
+import Pokemons.*;
+import Pokemons.Aerodactyl;
+
 public class PewterCity extends City {
 
     public PewterCity() {
@@ -8,6 +11,11 @@ public class PewterCity extends City {
 
     @Override
     public void initialize() {
-        
+        reachableCity.add(new ViridianCity());
+        reachableCity.add(new CeruleanCity());
+        wildPokemon.add(new Omanyte());
+        wildPokemon.add(new Kabuto());
+        wildPokemon.add(new Aerodactyl());
+        gymLeader = new GymLeader("Brock", "Rock", new Steelix(), "Boulder");
     }
 }

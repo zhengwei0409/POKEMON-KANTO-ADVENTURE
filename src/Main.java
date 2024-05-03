@@ -8,7 +8,7 @@ public class Main {
         
         loadGame();
 
-    }   
+    }
 
     // Method 1 : use for load game
     public static void loadGame() {
@@ -138,20 +138,34 @@ public class Main {
         System.out.println("+----------------------------------------------------------------------+");
         currentLocation.initialize();
         System.out.println("[1] Move to: ");
-        System.out.printf("    a. %-17s    b. %-17s\n", currentLocation.getReachableCity().get(0), currentLocation.getReachableCity().get(1));
+
+        if(currentLocation.getReachableCity().size() == 2) {
+            System.out.printf("    a. %-17s    b. %-17s\n", currentLocation.getReachableCity().get(0), currentLocation.getReachableCity().get(1));
+        } else if (currentLocation.getReachableCity().size() ==3) {
+            System.out.printf("    a. %-17s    b. %-17s    c. %-17s\n", currentLocation.getReachableCity().get(0), currentLocation.getReachableCity().get(1), currentLocation.getReachableCity().get(2));
+        } else {
+            System.out.printf("    a. %-17s    b. %-17s    c. %-17s    d. %-17s\n", currentLocation.getReachableCity().get(0), currentLocation.getReachableCity().get(1), currentLocation.getReachableCity().get(2), currentLocation.getReachableCity().get(3));
+        }
+        
 
         if(currentLocation.equals("Pallet Town")) {
             System.out.println("[2] Talk to Mom [Your hometown has no Gym]");
+        } else if (currentLocation.equals("Lavender Town")) {
+            System.out.println("[2] PokeMaze");
         } else {
             System.out.printf("[2] Challenge Gym leader [%s - %s type]\n", currentLocation.getGymLeader().getName(), currentLocation.getGymLeader().getType());
         }
 
-        System.out.printf("[3] Fight Wild Pokemon [%s, %s are common]\n", currentLocation.getWildPokemon().get(0), currentLocation.getWildPokemon().get(1));
+        System.out.printf("[3] Fight Wild Pokemon [%s, %s, %s are common]\n", currentLocation.getWildPokemon().get(0), currentLocation.getWildPokemon().get(1), currentLocation.getWildPokemon().get(2));
 
         System.out.println("[4] Player Options");
         System.out.println("    a.Show map    b.Show My Pokemon   c.Show My badges   d.Save and Exit");
 
-        // [TODO] if the city has extra feature then print [5] Extra Feature 
+        if(currentLocation.equals("Fuschia City")) {
+            System.out.println("[5] Safari Zon");
+        } else if (currentLocation.equals("Saffron City")) {
+            System.out.println("[5] Rival’s Race");
+        }
 
         // recursion
         Scanner sc = new Scanner(System.in);
@@ -177,21 +191,30 @@ public class Main {
                 myAccount.setLastLocation(currentLocation.getReachableCity().get(1));
                 printMenu(myAccount, indexOfAccount);
                 break;
+            case "1c":
+                myAccount.setLastLocation(currentLocation.getReachableCity().get(2));
+                printMenu(myAccount, indexOfAccount);
+                break;
+            case "1d":
+                myAccount.setLastLocation(currentLocation.getReachableCity().get(3));
+                printMenu(myAccount, indexOfAccount);
+                break;
             case "2":
                 if(currentLocation.equals("Pallet Town")) {
                     Dialog.MomTalking(myAccount.getName());
-                    printMenu(myAccount, indexOfAccount);
+                } else if (currentLocation.equals("Lavender Town")) {
+                    PokeMaze.playPokeMaze();
                 } else {
-                    // [TODO] fight with gym leader method
-                    printMenu(myAccount, indexOfAccount);
+                    // [TODO] challange gym leader
                 }
+                printMenu(myAccount, indexOfAccount);
                 break;
             case "3":
                 // [TODO] create a method for battle with wild pokemon
                 printMenu(myAccount, indexOfAccount);
                 break;
             case "4a":
-                showMap(myAccount.getLastLocation().toString());
+                ShowMap.showMap(myAccount.getLastLocation().toString());
                 printMenu(myAccount, indexOfAccount);
                 break;
             case "4b":
@@ -210,7 +233,13 @@ public class Main {
                 new Database(myAccount, indexOfAccount);
                 loadGame();
                 break;
-
+            case "5":
+                if(currentLocation.equals("Fuschia City")) {
+                    SafariZone.playSafariZone();
+                } else if (currentLocation.equals("Saffron City")) {
+                    RivalRace.PlayRivalRace();
+                }
+                printMenu(myAccount, indexOfAccount);
             default:
                 System.out.println("Invalid Command");
                 System.exit(0);
@@ -218,30 +247,5 @@ public class Main {
         }
     }
 
-    // method 5 : show map function
-    public static void showMap(String currentLocation) {
-        System.out.println(getCityNameWithAsterisk("Pewter City", currentLocation) + "-------------------" + getCityNameWithAsterisk("Cerulean City", currentLocation) + "-----------------|");
-        System.out.println("      |                                |                      |");
-        System.out.println("      |                                |                      |");
-        System.out.println("      |                                |                      |");
-        System.out.println("      |                                |                      |");
-        System.out.println("      |        " + getCityNameWithAsterisk("Celadon City", currentLocation) + "----" + getCityNameWithAsterisk("Saffron City", currentLocation) + "---------" + getCityNameWithAsterisk("Lavender Town", currentLocation));
-        System.out.println("      |               |                |                      |");
-        System.out.println(getCityNameWithAsterisk("Viridian City", currentLocation) + "        |                |                      |");
-        System.out.println("      |               |                |                      |");
-        System.out.println("      |               |                |                      |");
-        System.out.println("      |               |       " + getCityNameWithAsterisk("Vermillion City", currentLocation) + "----------------|");
-        System.out.println("      |               |                                       |");
-        System.out.println(getCityNameWithAsterisk("Pallet Town", currentLocation) + "          |                                       |");
-        System.out.println("      |               |                                       |");
-        System.out.println("      |          " + getCityNameWithAsterisk("Fuchsia City", currentLocation) + "--------------------------------|");
-        System.out.println("      |               |");
-        System.out.println("      |               |");
-        System.out.println(getCityNameWithAsterisk("Cinnabar Island", currentLocation) + "------|");
-        System.out.println("+----------------------------------------------------------------------+");
-    }
-    
-    private static String getCityNameWithAsterisk(String cityName, String currentLocation) {
-        return cityName.equals(currentLocation) ? "[*" + cityName + "*]" : "[" + cityName + "]";
-    }
+
 }

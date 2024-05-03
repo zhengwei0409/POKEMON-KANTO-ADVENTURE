@@ -10,7 +10,7 @@ public class Account {
     private ArrayList<String> badges = new ArrayList<>();
 
     // full list of city use in this game
-    City[] fullListOfCities = {new PalletTown(), new ViridianCity(), new CinnabarIsland(), new PewterCity()};
+    City[] fullListOfCities = {new CeladonCity(), new CeruleanCity(), new CinnabarIsland(), new FuschiaCity(), new LavenderTown(), new PalletTown(), new PewterCity(), new SaffronCity(), new VermillionCity(), new ViridianCity()};
 
     // constructor
     public Account() {

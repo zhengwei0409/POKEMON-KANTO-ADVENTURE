@@ -14,3 +14,4 @@ Welcome to the Pokemon world.
 |--------|----------------------------------------------------------------------------------|
 | Week 6 | Create basic classes require for our project and establish connection with MySQL |
 | Week 7 | Solving serialization problem                                                    |
+| Week 8 | Combining cities link, SafariZone, Rival's Race and PokeMaze                     |

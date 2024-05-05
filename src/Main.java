@@ -85,9 +85,9 @@ public class Main {
                     System.out.println("+----------------------------------------------------------------------+");
                     Dialog.OakChoosePokemonDialog(name);
                     System.out.println("+----------------------------------------------------------------------+");
-                    System.out.println("[1] Bulbasaur [Grass - Level 5]");
-                    System.out.println("[2] Squirtle [Water - Level 5]");
-                    System.out.println("[3] Charmander [Fire - Level 5]");
+                    System.out.println("[1] Bulbasaur [Grass - Level 1]");
+                    System.out.println("[2] Squirtle [Water - Level 1]");
+                    System.out.println("[3] Charmander [Fire - Level 1]");
                     System.out.println("+----------------------------------------------------------------------+");
                     System.out.print("Your choice: ");
                     userInput = sc.nextLine();
@@ -205,12 +205,14 @@ public class Main {
                 } else if (currentLocation.equals("Lavender Town")) {
                     PokeMaze.playPokeMaze();
                 } else {
-                    // [TODO] challange gym leader
+                    Battle bt = new Battle(myAccount, currentLocation);
+                    bt.challengeGymLeader();
                 }
                 printMenu(myAccount, indexOfAccount);
                 break;
             case "3":
-                // [TODO] create a method for battle with wild pokemon
+                Battle bt = new Battle(myAccount, currentLocation);
+                bt.fightWildPokemon();
                 printMenu(myAccount, indexOfAccount);
                 break;
             case "4a":

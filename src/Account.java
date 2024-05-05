@@ -55,6 +55,11 @@ public class Account {
         }
     }
 
+    // method 4 : add badges
+    public void addBadges(String badge) {
+        this.badges.add(badge);
+    }
+
 
     // setters and getters
     public String getName() {

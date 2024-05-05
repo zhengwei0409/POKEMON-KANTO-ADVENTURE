@@ -13,8 +13,9 @@ public class City {
     protected ArrayList<City> reachableCity = new ArrayList<>();
     protected ArrayList<Pokemon> wildPokemon = new ArrayList<>();
     protected GymLeader gymLeader;
-
+    protected boolean initialized = false;
     
+
     public City(String name) {
         this.name = name;
     }
@@ -22,6 +23,7 @@ public class City {
     public void initialize() {
         // Implement city attributes
     }
+
 
     // 不用管下面的
     // setters and getters

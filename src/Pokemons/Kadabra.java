@@ -3,7 +3,7 @@ package Pokemons;
 public class Kadabra extends Pokemon {
     
     public Kadabra() {
-        super("Kadabra", 1, 40, 35, 100);
+        super("Kadabra", 30, 170, 35, 100);
         this.type = "Psychic";
         this.strength = new String[]{"Psychic", "Fighting"};
         this.weakness = new String[]{"Bug", "Ghost", "Dark"};

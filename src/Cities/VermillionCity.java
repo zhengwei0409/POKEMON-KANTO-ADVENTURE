@@ -13,6 +13,8 @@ public class VermillionCity extends City {
 
     @Override
     public void initialize() {
+        if(initialized) return;
+        else initialized = true;
         reachableCity.add(new SaffronCity());
         reachableCity.add(new LavenderTown());
         reachableCity.add(new FuschiaCity());

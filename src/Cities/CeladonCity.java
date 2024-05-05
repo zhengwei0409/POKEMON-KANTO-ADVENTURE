@@ -10,6 +10,8 @@ public class CeladonCity extends City {
 
     @Override
     public void initialize() {
+        if(initialized) return;
+        else initialized = true;
         reachableCity.add(new SaffronCity());
         reachableCity.add(new FuschiaCity());
         wildPokemon.add(new Poliwag());

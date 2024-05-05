@@ -4,7 +4,7 @@ public class Cubone extends Pokemon {
 
 
     public Cubone() {
-        super("Cubone", 1, 50, 50, 100);
+        super("Cubone", 6, 158, 50, 100);
         this.type = "Ground";
         this.strength = new String[]{"Electric", "Poison", "Rock"};
         this.weakness = new String[]{"Water", "Grass", "Ice"};

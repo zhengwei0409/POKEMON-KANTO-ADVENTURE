@@ -15,6 +15,8 @@ public class PalletTown extends City {
 
     @Override
     public void initialize() {
+        if(initialized) return;
+        else initialized = true;
         reachableCity.add(new ViridianCity());
         reachableCity.add(new CinnabarIsland());
         wildPokemon.add(new Scyther());

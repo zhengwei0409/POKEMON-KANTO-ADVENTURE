@@ -10,6 +10,8 @@ public class CinnabarIsland extends City {
 
     @Override
     public void initialize() {
+        if(initialized) return;
+        else initialized = true;
         reachableCity.add(new PalletTown());
         reachableCity.add(new FuschiaCity());
         wildPokemon.add(new Magikarp());

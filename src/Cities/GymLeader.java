@@ -50,6 +50,10 @@ public class GymLeader {
         this.badges = badges;
     }
 
+    @Override
+    public String toString() {
+        return this.name;
+    }
     
     
 

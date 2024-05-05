@@ -4,7 +4,7 @@ public class Ninetales extends Pokemon {
 
 
     public Ninetales() {
-        super("Ninetales", 1, 73, 76, 100);
+        super("Ninetales", 33, 193, 76, 100);
         this.type = "Fire";
         this.strength = new String[]{"Grass", "Fire", "Ice"};
         this.weakness = new String[]{"Water", "Ground", "Rock"};

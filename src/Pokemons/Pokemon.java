@@ -46,7 +46,6 @@ public class Pokemon {
         }
     }
 
-
     // setters and getterssssss
     public String getName() {
         return name;
@@ -70,6 +69,7 @@ public class Pokemon {
 
     public void setLevel(int level) {
         this.level = level;
+
     }
 
     public int getMaxHp() {

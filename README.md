@@ -18,7 +18,8 @@ Welcome to the Pokemon world.
 | Week 9 | Completing challenge gym leader, battle wild pokemon and pokemon level up feature |
 
 ## Cloning guide
-You must configure your database and clone everything in the `src` folder to be able to run the code
-enc https://docs.google.com/document/d/148z368p45c9iX828fWJkeropbYpyPkc3L7Y7YcJc0AM/edit?usp=sharing
+You must configure your database and clone everything in the `src` folder to be able to run the code  
+enc https://docs.google.com/document/d/148z368p45c9iX828fWJkeropbYpyPkc3L7Y7YcJc0AM/edit?usp=sharing  
+make sure jar file or any configuration connect to your MySQL database is also done
 
 if got any problem, please contact me ><

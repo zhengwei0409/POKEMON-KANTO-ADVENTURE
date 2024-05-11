@@ -9,10 +9,10 @@ import java.util.ArrayList;
 import javax.swing.*;
 
 public class ShowBadgesGUI {
-    // public static void main(String[] args) {
+    public static void main(String[] args) {
         
-    //     showBadges(null);
-    // }
+        showBadges(null);
+    }
 
     public static void showBadges(ArrayList<String> badges) {
         boolean boulder = false;
@@ -50,7 +50,7 @@ public class ShowBadgesGUI {
         // create a frame
         JFrame badgesF = new JFrame();
         badgesF.setSize(1080, 720);
-        badgesF.setTitle("Kanto Region Map");
+        badgesF.setTitle("My Badges");
         badgesF.setResizable(false);
         badgesF.setLayout(null);
 

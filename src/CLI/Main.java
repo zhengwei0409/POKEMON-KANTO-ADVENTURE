@@ -4,6 +4,7 @@ import java.util.Scanner;
 import javax.swing.JFrame;
 
 import Cities.City;
+import GUI.ChoosePokemonGUI;
 import GUI.ShowBadgesGUI;
 import GUI.ShowMapGUI;
 import GUI.ShowPokemonGUI;
@@ -82,40 +83,42 @@ public class Main {
         
                 // if user account name field is empty, it means that it is a new game
                 if(userAccount.getName().equals("empty")) {
-                    System.out.println("+----------------------------------------------------------------------+");
-                    Dialog.OakWelcomeDialog();
-                    System.out.println("+----------------------------------------------------------------------+");
-                    System.out.print("Enter your name: ");
-                    String name = sc.nextLine();
-                    userAccount.setName(name);
-                    System.out.println("+----------------------------------------------------------------------+");
-                    Dialog.OakChoosePokemonDialog(name);
-                    System.out.println("+----------------------------------------------------------------------+");
-                    System.out.println("[1] Bulbasaur [Grass - Level 1]");
-                    System.out.println("[2] Squirtle [Water - Level 1]");
-                    System.out.println("[3] Charmander [Fire - Level 1]");
-                    System.out.println("+----------------------------------------------------------------------+");
-                    System.out.print("Your choice: ");
-                    userInput = sc.nextLine();
+                    ChoosePokemonGUI.ChoosePokemon(userAccount);
+                    // CLI below
+                    // System.out.println("+----------------------------------------------------------------------+");
+                    // Dialog.OakWelcomeDialog();
+                    // System.out.println("+----------------------------------------------------------------------+");
+                    // System.out.print("Enter your name: ");
+                    // String name = sc.nextLine();
+                    // userAccount.setName(name);
+                    // System.out.println("+----------------------------------------------------------------------+");
+                    // Dialog.OakChoosePokemonDialog(name);
+                    // System.out.println("+----------------------------------------------------------------------+");
+                    // System.out.println("[1] Bulbasaur [Grass - Level 1]");
+                    // System.out.println("[2] Squirtle [Water - Level 1]");
+                    // System.out.println("[3] Charmander [Fire - Level 1]");
+                    // System.out.println("+----------------------------------------------------------------------+");
+                    // System.out.print("Your choice: ");
+                    // userInput = sc.nextLine();
         
-                    // assign the right pokemon chosen by the user
-                    switch(userInput) {
-                        case "1": 
-                            userAccount.addPokemon(new Bulbasaur());
-                            break;
-                        case "2":
-                            userAccount.addPokemon(new Squirtle());
-                            break;
-                        case"3":
-                            userAccount.addPokemon(new Charmander());
-                            break;
-                        default:
-                            System.out.println("Invalid Command");
-                            System.exit(0);
-                            break;
-                    }
-                    System.out.println("+----------------------------------------------------------------------+");
-                    System.out.printf("OAK:    You chose %s, an amazing choice. Best of luck!\n", userAccount.getPokemonTeam().getFirst());
+                    // // assign the right pokemon chosen by the user
+                    // switch(userInput) {
+                    //     case "1": 
+                    //         userAccount.addPokemon(new Bulbasaur());
+                    //         break;
+                    //     case "2":
+                    //         userAccount.addPokemon(new Squirtle());
+                    //         break;
+                    //     case"3":
+                    //         userAccount.addPokemon(new Charmander());
+                    //         break;
+                    //     default:
+                    //         System.out.println("Invalid Command");
+                    //         System.exit(0);
+                    //         break;
+                    // }
+                    // System.out.println("+----------------------------------------------------------------------+");
+                    // System.out.printf("OAK:    You chose %s, an amazing choice. Best of luck!\n", userAccount.getPokemonTeam().getFirst());
 
                 }
         

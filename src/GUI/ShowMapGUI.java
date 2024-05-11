@@ -13,9 +13,9 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 public class ShowMapGUI {
-    // public static void main(String[] args) {
-    //     showMap("Lavender Town");
-    // }
+    public static void main(String[] args) {
+        showMap("Lavender Town");
+    }
 
     public static void showMap(String currentLocation) {
         // create a frame
@@ -36,20 +36,6 @@ public class ShowMapGUI {
         lower.setBounds(0, 100, 1080, 620);
         lower.setLayout(null);
 
-        // -------------- label --------------------
-        JLabel title = new JLabel();
-        title.setText("KANTO REGION");
-        title.setFont(new Font("Arial", Font.BOLD, 35)); // set font of text
-        title.setForeground(new Color(33,56,110));
-        int xCoordinate = (upper.getWidth() - title.getPreferredSize().width) / 2;
-        title.setBounds(xCoordinate, 0, 650, 80);
-
-        JLabel title2 = new JLabel();
-        title2.setText("MAP");
-        title2.setFont(new Font("Arial", Font.BOLD, 15)); // set font of text
-        title2.setForeground(new Color(33,56,110));
-        int xCoordinate2 = (upper.getWidth() - title2.getPreferredSize().width) / 2;
-        title2.setBounds(xCoordinate2, 60, 650, 20);
 
         // -------------- Button --------------------
         JButton backBtn = new JButton("BACK");
@@ -63,8 +49,16 @@ public class ShowMapGUI {
         });
 
         // --------------- image -----------------
+
+        // add header image
+        // ---- image label ----
+        // header image 
+        ImageIcon headerImage = new ImageIcon("/Users/zhengwei/Documents/Pokemon/Pokemon/src/Image/KantoRegionHeader.png");
+        JLabel headerL = new JLabel();
+        headerL.setBounds(0, 0, 1080, 100);
+        headerL.setIcon(headerImage);
         
-        // add image to upper panel
+        // add image to lower panel
         ImageIcon currentLocationImg = new ImageIcon();
         switch (currentLocation) {
             case "Pallet Town":
@@ -112,8 +106,7 @@ public class ShowMapGUI {
         lower.add(backBtn);
         lower.add(mapImg);
         
-        upper.add(title);
-        upper.add(title2);
+        upper.add(headerL);
 
         // add to frame 
         mapF.add(upper);

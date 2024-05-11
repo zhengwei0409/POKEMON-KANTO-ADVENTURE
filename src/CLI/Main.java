@@ -1,7 +1,6 @@
 package CLI;
 import java.util.Scanner;
 
-import javax.swing.JFrame;
 
 import Cities.City;
 import GUI.ChoosePokemonGUI;

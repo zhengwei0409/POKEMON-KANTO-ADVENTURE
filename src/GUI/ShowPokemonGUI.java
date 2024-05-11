@@ -44,7 +44,7 @@ public class ShowPokemonGUI {
         // -------------- panel ----------------
         JPanel upper = new JPanel();
         upper.setBounds(0, 0, 1080, 100);
-        upper.setBackground(new Color(255,246,164));
+        upper.setBackground(new Color(252, 227, 75));
         upper.setLayout(null);
         
         JPanel lower = new JPanel();

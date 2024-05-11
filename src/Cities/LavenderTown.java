@@ -14,7 +14,7 @@ public class LavenderTown extends City {
         else initialized = true;
         reachableCity.add(new CeruleanCity());
         reachableCity.add(new SaffronCity());
-        reachableCity.add(new VermillionCity());
+        reachableCity.add(new VermilionCity());
         reachableCity.add(new FuschiaCity());
         wildPokemon.add(new Gastly());
         wildPokemon.add(new Haunter());

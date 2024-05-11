@@ -13,7 +13,7 @@ public class SaffronCity extends City {
         else initialized = true;
         reachableCity.add(new CeruleanCity());
         reachableCity.add(new LavenderTown());
-        reachableCity.add(new VermillionCity());
+        reachableCity.add(new VermilionCity());
         reachableCity.add(new CeladonCity());
         wildPokemon.add(new Hitmonlee());
         wildPokemon.add(new Hitmonchan());

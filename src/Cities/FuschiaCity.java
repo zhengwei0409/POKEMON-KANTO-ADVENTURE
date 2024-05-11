@@ -14,7 +14,7 @@ public class FuschiaCity extends City {
         if(initialized) return;
         else initialized = true;
         reachableCity.add(new CeladonCity());
-        reachableCity.add(new VermillionCity());
+        reachableCity.add(new VermilionCity());
         reachableCity.add(new LavenderTown());
         wildPokemon.add(new Poliwag());
         wildPokemon.add(new Magikarp());

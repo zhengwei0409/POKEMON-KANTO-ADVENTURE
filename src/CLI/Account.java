@@ -1,3 +1,4 @@
+package CLI;
 import java.util.ArrayList;
 
 import Cities.*;
@@ -10,7 +11,7 @@ public class Account {
     private ArrayList<String> badges = new ArrayList<>();
 
     // full list of city use in this game
-    City[] fullListOfCities = {new CeladonCity(), new CeruleanCity(), new CinnabarIsland(), new FuschiaCity(), new LavenderTown(), new PalletTown(), new PewterCity(), new SaffronCity(), new VermillionCity(), new ViridianCity()};
+    City[] fullListOfCities = {new CeladonCity(), new CeruleanCity(), new CinnabarIsland(), new FuschiaCity(), new LavenderTown(), new PalletTown(), new PewterCity(), new SaffronCity(), new VermilionCity(), new ViridianCity()};
 
     // constructor
     public Account() {

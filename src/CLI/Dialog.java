@@ -1,3 +1,4 @@
+package CLI;
 public class Dialog {
     /*
      * This class is used for storing dialog used in the game ^ ^

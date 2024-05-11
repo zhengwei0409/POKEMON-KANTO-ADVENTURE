@@ -1,3 +1,4 @@
+package CLI;
 public class ShowMap {
 /*
  * this class is use to display the map and also indicating the current location

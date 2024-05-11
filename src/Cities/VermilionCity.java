@@ -5,10 +5,10 @@ import Pokemons.Magikarp;
 import Pokemons.Poliwag;
 import Pokemons.Voltorb;
 
-public class VermillionCity extends City {
+public class VermilionCity extends City {
 
-    public VermillionCity() {
-        super("Vermillion City");
+    public VermilionCity() {
+        super("Vermilion City");
     }
 
     @Override

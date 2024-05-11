@@ -1,3 +1,4 @@
+package CLI;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -22,6 +23,12 @@ public class Battle {
     
     // method for challenge gym leader
     public void challengeGymLeader() {
+        if(currentLocation.toString().equals("Viridian City")) {
+            if(account.getBadges().size() < 7) {
+                System.out.println("You can only challenge the gym leader once you have obtained the Badges of the seven other Gyms of Kanto.");
+                return;
+            }
+        }
         GymLeader gymLeader = currentLocation.getGymLeader();
         Pokemon gymLeaderPokemon = gymLeader.getPokemon();
         System.out.println("+----------------------------------------------------------------------+");

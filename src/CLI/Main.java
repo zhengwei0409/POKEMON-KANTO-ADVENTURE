@@ -1,6 +1,12 @@
+package CLI;
 import java.util.Scanner;
 
+import javax.swing.JFrame;
+
 import Cities.City;
+import GUI.ShowBadgesGUI;
+import GUI.ShowMapGUI;
+import GUI.ShowPokemonGUI;
 import Pokemons.*;
 
 public class Main {
@@ -217,11 +223,13 @@ public class Main {
                 break;
             case "4a":
                 ShowMap.showMap(myAccount.getLastLocation().toString());
+                ShowMapGUI.showMap(myAccount.getLastLocation().toString());
                 printMenu(myAccount, indexOfAccount);
                 break;
             case "4b":
                 Pokemon myPokemon = myAccount.getPokemonTeam().get(0);
                 myPokemon.printDetails();
+                ShowPokemonGUI.showPokemon(myAccount);
                 printMenu(myAccount, indexOfAccount);
                 break;
             case "4c":
@@ -229,6 +237,7 @@ public class Main {
                 for(String i : myAccount.getBadges()) {
                     System.out.println("- " + i);
                 }
+                ShowBadgesGUI.showBadges(myAccount.getBadges());
                 printMenu(myAccount, indexOfAccount);
                 break;
             case "4d":

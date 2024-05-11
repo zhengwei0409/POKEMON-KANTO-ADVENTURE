@@ -1,3 +1,4 @@
+package CLI;
 /*
  * This class is use for display Ascii Art
  */

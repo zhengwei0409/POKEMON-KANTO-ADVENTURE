@@ -49,7 +49,7 @@ public class ShowPokemonGUI {
         
         JPanel lower = new JPanel();
         lower.setBounds(0, 100, 1080, 620);
-        lower.setBackground(new Color(217,217,217));
+        lower.setBackground(new Color(255,255,255));
         lower.setLayout(null);
 
         // -------------- label --------------------

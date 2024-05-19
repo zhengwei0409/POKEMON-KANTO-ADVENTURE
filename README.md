@@ -10,12 +10,13 @@ Welcome to the Pokemon world.
 
 
 ## Progress log
-| Date   | Description                                                                       |
-|--------|-----------------------------------------------------------------------------------|
-| Week 6 | Create basic classes require for our project and establish connection with MySQL  |
-| Week 7 | Solving serialization problem                                                     |
-| Week 8 | Combining cities link, SafariZone, Rival's Race and PokeMaze                      |
-| Week 9 | Completing challenge gym leader, battle wild pokemon and pokemon level up feature |
+| Date    | Description                                                                       |
+|---------|-----------------------------------------------------------------------------------|
+| Week 6  | Create basic classes require for our project and establish connection with MySQL  |
+| Week 7  | Solving serialization problem                                                     |
+| Week 8  | Combining cities link, SafariZone, Rival's Race and PokeMaze                      |
+| Week 9  | Completing challenge gym leader, battle wild pokemon and pokemon level up feature |
+| Week 10 | Completing ShowMapGUI, ChoosePokemonGUI, ShowMyPokemonGUI and ShowMyBadgesGUI     |
 
 ## Cloning guide
 You must configure your database and clone everything in the `src` folder to be able to run the code  

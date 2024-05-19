@@ -7,6 +7,7 @@ import GUI.ChoosePokemonGUI;
 import GUI.ShowBadgesGUI;
 import GUI.ShowMapGUI;
 import GUI.ShowPokemonGUI;
+import GUI.TalkToMomGUI;
 import Pokemons.*;
 
 public class Main {
@@ -210,6 +211,7 @@ public class Main {
             case "2":
                 if(currentLocation.equals("Pallet Town")) {
                     Dialog.MomTalking(myAccount.getName());
+                    TalkToMomGUI.talkToMomGUI();
                 } else if (currentLocation.equals("Lavender Town")) {
                     PokeMaze.playPokeMaze();
                 } else {

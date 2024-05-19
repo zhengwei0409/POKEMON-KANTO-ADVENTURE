@@ -98,6 +98,7 @@ public class ChoosePokemonGUI {
         bgPanel.add(doneBtn);
         bgPanel.add(bgL);
         
+    
 
         // add to frame
         choosePokemonF.add(bgPanel);
